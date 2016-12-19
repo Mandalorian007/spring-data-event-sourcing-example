@@ -9,14 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.data.eventsourcing.factory.SpringDataEventSourcingFactory;
 import org.springframework.data.eventsourcing.template.EventSourcingTemplate;
 
 @SpringBootApplication
 public class EventSourcingExampleApplication implements CommandLineRunner {
     @Autowired
-    ApplicationContext context;
+    AggregateRepository aggregateRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventSourcingExampleApplication.class, args);
@@ -24,8 +23,6 @@ public class EventSourcingExampleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        AggregateRepository aggregateRepository = context.getBean(AggregateRepository.class);
-
         SpringDataEventSourcingFactory factory = new SpringDataEventSourcingFactory();
         factory.setAggregateUpdater(new MyAggregateUpdater(aggregateRepository));
         factory.setEventValidationHandler(new MyEventValidator(aggregateRepository));
