@@ -11,7 +11,7 @@ import org.springframework.data.couchbase.core.mapping.Document;
 @Document
 public class Profile {
     @Id
-    private String id;
+    private String employeeId;
 
     @Field
     private String firstName;
