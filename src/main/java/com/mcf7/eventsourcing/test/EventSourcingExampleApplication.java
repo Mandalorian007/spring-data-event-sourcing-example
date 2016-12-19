@@ -10,7 +10,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.eventsourcing.factory.SpringDataEventSourcingFactory;
 import org.springframework.data.eventsourcing.template.EventSourcingTemplate;
 
@@ -18,22 +17,16 @@ import org.springframework.data.eventsourcing.template.EventSourcingTemplate;
 public class EventSourcingExampleApplication implements CommandLineRunner {
     @Autowired
     ApplicationContext context;
-    @Autowired
-    SpringDataEventSourcingFactory factory;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventSourcingExampleApplication.class, args);
 	}
 
-	@Bean
-    SpringDataEventSourcingFactory createFactory() {
-	    return new SpringDataEventSourcingFactory();
-    }
-
     @Override
     public void run(String... strings) throws Exception {
         AggregateRepository aggregateRepository = context.getBean(AggregateRepository.class);
 
+        SpringDataEventSourcingFactory factory = new SpringDataEventSourcingFactory();
         factory.setAggregateUpdater(new MyAggregateUpdater(aggregateRepository));
         factory.setEventValidationHandler(new MyEventValidator(aggregateRepository));
         EventSourcingTemplate template = factory.build();
