@@ -5,9 +5,9 @@ Example project for: https://github.com/Mandalorian007/spring-data-eventsourcing
 
 Setting up Couchbase
 
-1.  Default bucket primary index
+*  Default bucket primary index
     *  CREATE PRIMARY INDEX ON `default` USING GSI;
-2.  couchbaseDomainEventWrapper view
+*  couchbaseDomainEventWrapper view
     *  all
 ```
 function (doc, meta) {
@@ -16,7 +16,7 @@ function (doc, meta) {
     }
 }
 ```
-3.  profile view
+*  profile view
     *  all
 ```
 function (doc, meta) {
