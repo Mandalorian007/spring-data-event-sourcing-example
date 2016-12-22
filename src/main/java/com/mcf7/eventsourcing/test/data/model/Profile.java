@@ -1,4 +1,4 @@
-package com.mcf7.eventsourcing.test.domain;
+package com.mcf7.eventsourcing.test.data.model;
 
 import com.couchbase.client.java.repository.annotation.Field;
 import com.couchbase.client.java.repository.annotation.Id;

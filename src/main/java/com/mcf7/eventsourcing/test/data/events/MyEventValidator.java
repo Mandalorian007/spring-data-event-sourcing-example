@@ -1,11 +1,12 @@
-package com.mcf7.eventsourcing.test.domain;
+package com.mcf7.eventsourcing.test.data.events;
 
-import com.mcf7.eventsourcing.test.events.ChangePhoneNumberEvent;
-import com.mcf7.eventsourcing.test.events.CreateProfileEvent;
+import com.mcf7.eventsourcing.test.data.model.AggregateRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.data.eventsourcing.event.validator.EventValidationHandler;
 import org.springframework.data.eventsourcing.event.validator.EventValidator;
+import org.springframework.stereotype.Component;
 
+@Component
 @AllArgsConstructor
 public class MyEventValidator extends EventValidationHandler {
     private AggregateRepository aggregateRepository;

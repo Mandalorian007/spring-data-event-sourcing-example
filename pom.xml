@@ -5,7 +5,7 @@
 
 	<groupId>com.mcf7.eventsourcing.test</groupId>
 	<artifactId>event-sourcing-example</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>event-sourcing-example</name>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.springframework.data.eventsourcing</groupId>
             <artifactId>spring-data-eventsourcing</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2</version>
         </dependency>
 
 		<dependency>

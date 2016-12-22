@@ -1,10 +1,12 @@
-package com.mcf7.eventsourcing.test.domain;
+package com.mcf7.eventsourcing.test.data.model;
 
-import com.mcf7.eventsourcing.test.events.ChangePhoneNumberEvent;
-import com.mcf7.eventsourcing.test.events.CreateProfileEvent;
+import com.mcf7.eventsourcing.test.data.events.ChangePhoneNumberEvent;
+import com.mcf7.eventsourcing.test.data.events.CreateProfileEvent;
 import org.springframework.data.eventsourcing.aggregate.AggregateEventHandler;
 import org.springframework.data.eventsourcing.aggregate.AggregateUpdater;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MyAggregateUpdater extends AggregateUpdater {
     private AggregateRepository aggregateRepository;
 

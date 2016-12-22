@@ -20,7 +20,7 @@ function (doc, meta) {
     *  all
 ```
 function (doc, meta) {
-    if (doc._class == 'com.mcf7.eventsourcing.test.domain.Profile') {
+    if (doc._class == 'com.mcf7.eventsourcing.test.data.model.Profile') {
         emit(doc.name, [doc.id,doc.firstName,doc.lastName,doc.phoneNumber]);
     }
 }
