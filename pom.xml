@@ -27,7 +27,7 @@
 	<dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
@@ -36,7 +36,7 @@
         <dependency>
             <groupId>org.springframework.data.eventsourcing</groupId>
             <artifactId>spring-data-eventsourcing</artifactId>
-            <version>0.0.2</version>
+            <version>0.0.3</version>
         </dependency>
 
 		<dependency>

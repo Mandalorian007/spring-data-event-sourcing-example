@@ -2,6 +2,7 @@ package com.mcf7.eventsourcing.test;
 
 import com.mcf7.eventsourcing.test.data.events.ChangePhoneNumberEvent;
 import com.mcf7.eventsourcing.test.data.events.CreateProfileEvent;
+import com.mcf7.eventsourcing.test.data.events.MyEventValidator;
 import com.mcf7.eventsourcing.test.data.model.ProfileEventSourcingTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,6 +13,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class EventSourcingExampleApplication implements CommandLineRunner {
     @Autowired
     ProfileEventSourcingTemplate template;
+    @Autowired
+    MyEventValidator eventValidator;
 
 	public static void main(String[] args) {
 		SpringApplication.run(EventSourcingExampleApplication.class, args);
